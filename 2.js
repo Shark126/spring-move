@@ -9,7 +9,7 @@ function fb(n){
 }
 
 console.log(fb(15));
- //5!
+
 //5*4*3*2*1
 
 // function mul(n){
