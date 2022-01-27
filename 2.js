@@ -12,6 +12,7 @@ console.log(fb(15));
 
 //5*4*3*2*1
 //5*4*3*2*1
+//今日份摸鱼
 // function mul(n){
 //     var nums=1;
 //     for(let i=n;i>0;i--){
