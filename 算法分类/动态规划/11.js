@@ -1,4 +1,4 @@
-// 盛水最多的容器
+// 盛水最多的容器  双指针，从两头开始内卷，先卷死挫的那一头
 var maxArea = function(height) {
     let length = height.length
     let left = 0;
