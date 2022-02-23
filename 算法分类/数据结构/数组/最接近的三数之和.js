@@ -46,3 +46,4 @@ var threeSumClosest = function(nums, target) {
     }
 
 }
+//这个写的很好
