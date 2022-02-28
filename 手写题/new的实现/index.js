@@ -1,5 +1,4 @@
 // // 模拟实现new操作符
-
 function newOperator(ctor){
     if(typeof ctor !== 'function'){
         throw '这个的第一个参数必须是一个函数!'
@@ -25,3 +24,11 @@ function newOperator(ctor){
      // 5.如果函数没有返回对象类型`Object`(包含`Functoin`, `Array`, `Date`, `RegExg`, `Error`)，那么`new`表达式中的函数调用会自动返回这个新的对象
     return newObj
 }
+
+function A(name,age){
+    this.name = name,
+    this.age = age
+}
+
+var B = newOperator(A,'小花',18)
+console.log(B);
