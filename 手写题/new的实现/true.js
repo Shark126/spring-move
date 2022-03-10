@@ -1,20 +1,16 @@
 function myNew(ctor){
- if(typeof ctor !== 'function'){
-     throw '参数不是一个函数'
- }
- myNew.target = ctor
- var newObj = Object.create(ctor.prototype)
- var arrsObj = [].slice.call(arguments,1)
+    if(typeof ctor !== 'function') return false
 
- var objReturn = ctor.apply(newObj,arrsObj)
+    myNew.target = ctor
+    var newObj = Object.create(ctor.prototype)
+    var newArrs = [].slice.call(arguments,1) //这个方法类似Array.prototype.slice.call(arguments,1) 可以把带有length属性的东西转为类数组 
 
- var isObject = typeof objReturn === 'object' && objReturn !== null
- var isFunction = typeof objReturn === 'function'
- if(isObject || isFunction){
-     return objReturn
- }
+    var returnObj = ctor.apply(newObj,newArrs)
+    
+    var isObject = typeof returnObj === 'object' && returnObj !== null
+    var isFunction = typeof returnObj === 'function'
 
- return newObj
+    return (isObject || isFunction) ? returnObj : newObj
 }
 
 function MyBaby(name,age){
@@ -22,6 +18,6 @@ function MyBaby(name,age){
     this.age = age
 }
 
-var newObj = myNew(MyBaby,'王敏',22)
+var newObj = myNew(MyBaby,'余涛',22)
 console.log(newObj);
 
