@@ -36,3 +36,5 @@ function fangdou(fun,time){
         },time)
     }
 }
+
+

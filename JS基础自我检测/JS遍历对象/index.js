@@ -1,4 +1,5 @@
 // 1. for in ，for（const key in obj） 也可以遍历数组，可以遍历一个对象的除Symbol以外的可枚举属性，包括继承的可枚举属性
+// 好像是会遍历原型链上的属性，因此不推荐使用来遍历数组
 const obj = {
     name: "nordon",
     age: 12
@@ -28,4 +29,15 @@ const obj2 = {
     name: 'yt',
     age: 21,
     sex: true
+}
+
+Object.keys(obj2).forEach(key =>{
+    console.log(key,obj2[key]);
+})
+
+// 4. Object.entries 方法可以将一个对象自身可枚举属性的键值对作为数组返回
+// console.log(Object.entries(obj2));
+
+for(const [key,value] of Object.entries(obj2)){
+    console.log(key,'------',value);
 }
