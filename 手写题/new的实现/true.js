@@ -18,6 +18,19 @@ function MyBaby(name,age){
     this.age = age
 }
 
-var newObj = myNew(MyBaby,'余涛',22)
+var newObj = oneNew(MyBaby,'余涛',22)
 console.log(newObj);
 
+function oneNew(ctor){
+    if(typeof ctor !== 'function') return false
+    oneNew.target = ctor
+    var newObj = Object.create(ctor.prototype)
+    var newArrs = [].slice.call(arguments,1)
+
+    var returnObj = ctor.apply(newObj,newArrs)
+
+    var isObject = typeof returnObj === 'object' && returnObj !== null
+    var isFunction = typeof returnObj === 'function'
+
+    return (isFunction || isObject) ? returnObj : newObj
+}
