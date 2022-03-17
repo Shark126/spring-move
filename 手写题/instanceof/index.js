@@ -12,13 +12,15 @@ function myInstanceOf(left,right){
 
 console.log(myInstanceOf(2,Number));
 
-function mof(left,right){
+function myIn(left,right){
     let proto = Object.getPrototypeOf(left)
     let prototype = right.prototype
 
     while(true){
         if(!proto) return false
-        if(proto === prototype) return true
+        if(proto === prototype){
+            return true
+        }
         proto = Object.getPrototypeOf(proto)
     }
 }

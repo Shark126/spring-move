@@ -31,3 +31,40 @@ function quchong2(arr) {
 let arr = [1,1,1,2,3,4,4,5,6,6]
 quchong2(arr)
 // console.log(newArr);
+
+//  3. Array.sort加一行遍历冒泡
+function quchong3(arr){
+    var res = []
+    var sortedArray = arr.concat().sort()
+    var seen
+    for(var i = 0 ; i < arr.length ; i++){
+        if(!i || seen !== sortedArray[i]){
+            res.push(sortedArray[i])
+        }
+        seen = sortedArray[i]
+    }
+    return res
+}
+
+// 4. 用set
+function quchong4(arr){
+    return Array.from(new Set(arr))
+}
+// 简化
+function easy(arr){
+    return [...new Set(arr)]
+}
+// 再简化
+let soEasy = (arr) => [...new Set(arr)]
+
+
+// 5. Object 键值对去重
+function quchong5(arr){
+    var obj = {}
+    return arr.filter(function(item,index,arr){
+        return obj.hasOwnProperty(typeof item + item) ? false : (obj[typeof item + item] = true )
+    })
+}
+
+// 6. 键值对去重 
+// 7. reduce去重
