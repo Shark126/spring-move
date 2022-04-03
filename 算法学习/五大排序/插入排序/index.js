@@ -20,3 +20,5 @@ const insertionSort = array =>{
     }
     return array
 }
+const arr = [2,12,5,6]
+insertionSort(arr)
