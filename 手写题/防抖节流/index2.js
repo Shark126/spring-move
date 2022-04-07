@@ -4,3 +4,15 @@
 
 // 应用场景： 1.鼠标不断的点击，设置节流让它只触发一次
 //          2.监听滚动事件，比如是否滚到地步加载更多，用节流来判定
+
+function jieliu(fun,time){
+    let t1 = 0
+    return function(){
+        let t2 = new Date()
+        let args = arguments
+        if(t2 - t1 > time){
+            fun.apply(this,args)
+            t1 = t2
+        }
+    }
+}
