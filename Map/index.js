@@ -20,8 +20,8 @@ var d = brr.slice(1)
 console.log(d);
 console.log(brr);
 
-const crr = [1,2,3,4,5]
 var ddd = crr.push(1)
 console.log('push的打印结果',ddd);
-
+var ddd = crr.push(1)
+console.log('push的打印结果',ddd);
 //泪目 我再次泪目
