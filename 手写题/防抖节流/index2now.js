@@ -10,3 +10,16 @@ function throttleNow(fun,wait){
         }
     }
 }
+
+
+function jl(fun,wait){
+    let doNow = null
+    return function(){
+        if(!doNow){
+            fun.apply(this,arguments)
+            doNow = setTimeout(()=>{
+                doNow = null
+            },wait)
+        }
+    }
+}

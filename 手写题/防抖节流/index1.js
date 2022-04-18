@@ -35,5 +35,15 @@ function fangdou(fun,time){
 }
 
 
-
+// 立即执行版本
+function fd(fun,time,isOk){
+    if(isOk){
+        isOk = !isOk
+        fun.apply(this,arguments)
+    }
+    if(timer) clearTimeout(timer)
+    timer = setTimeout(()=>{
+        fun.apply(this,arguments)
+    },time)
+}
 
