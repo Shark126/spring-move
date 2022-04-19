@@ -23,3 +23,4 @@ function jl(fun,wait){
         }
     }
 }
+// 防抖节流都涉及了闭包的知识
