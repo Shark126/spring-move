@@ -12,3 +12,5 @@ var obj = {
 obj.test2 = fn
 console.log(obj.test1());
 console.log(fn() === obj.test2());
+
+console.log('这是一次小的变动');
