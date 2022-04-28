@@ -82,3 +82,5 @@ async function f1() {
   }
 
   run()
+
+// 1 、 2 、 4 、 3 、 5 、7 、6
