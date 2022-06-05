@@ -23,17 +23,16 @@ function debounce(fun,time){
 }
 addBtn.addEventListener('click',debounce(addOne,2000))
 
-function fangdou(fun,time){
-    let timer
+function debounce2(fun,delay){
+    let timer 
     return function(){
         clearTimeout(timer)
         let args = arguments
-        timer = setTimeout(() =>{
+        timer = setTimeout(()=>{
             fun.apply(this,args)
-        },time)
+        },delay)
     }
 }
-
 
 // 立即执行版本
 function fd(fun,time,isOk){
