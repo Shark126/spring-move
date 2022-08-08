@@ -8,5 +8,5 @@ var hasPathSum = function(root, targetSum) {
     }
 
     if(!root) return false
-    traversal(root,targetSum - root.val)
+    return traversal(root,targetSum - root.val)
 };
