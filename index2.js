@@ -1,39 +1,16 @@
-// function  containsNearbyDuplic(nums, k) {
-//       for(let i = 0 ; i < nums.length ; i++){
-//         let n1 = nums.indexOf(nums[i])
-//         let n2 = nums.lastIndexOf(nums[i])
-//         if(n1 !== n2){
-//           if( n2 - n1 <= k ){
-//             return true
-//           }
-//         }
-//       }
-//       return false
-//     }
+var obj = {
+  name: 'baidu',
+  arr: ['a', 'b', 'c']
+}
 
-// let nums = [1,2,3,1]
-// let k = 3
-// containsNearbyDuplic(nums,k)
+var obj2 = obj //此时obj与obj2的引用地址都是指向同一个地方
+var arr = obj.arr //此时获取的是 obj内的arr的指针指向的内存地址中的 ['a','b','c']
 
+obj2.arr = ['a', 'b', 'c', 'd'] //由于arr是引用类型，这相当于把指针指向了新数组，但是原地址中的['a','b','c']未改变
+obj2.name = 'inke'//没啥说
 
-function longestWPI(hours) {
-    let normal = 0, unnormal = 0, max = 0
-    let arr =[]
-    hours.forEach((day) =>{
-      if(day > 8){
-        unnormal = unnormal + 1
-        arr.push(day)
-      }else{
-        normal = normal + 1
-        arr.push(day)
-      }
-      if(normal > unnormal){
-        arr.shift()
-      }
-      if(normal < unnormal){
-        max = Math.max(max,arr.length)
-      }
-    })
-    return max
-
-  }
+console.log(arr) // ['a','b','c']
+console.log(obj.name) // inke
+console.log(obj === obj2) // true 必须的
+console.log(obj.arr === obj2.arr)// true 必须的
+console.log(obj.arr === arr)// false
