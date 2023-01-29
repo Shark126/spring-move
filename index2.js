@@ -14,3 +14,4 @@ console.log(obj.name) // inke
 console.log(obj === obj2) // true 必须的
 console.log(obj.arr === obj2.arr)// true 必须的
 console.log(obj.arr === arr)// false
+//第一次提交test
