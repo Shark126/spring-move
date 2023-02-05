@@ -20,11 +20,29 @@ function objectNew(){
 
 }
 
+function testNew(){
+    let newObj = null
+    let constructor = Array.prototype.shift.call(arguments)
+    let result = null
+
+    if(typeof constructor !== 'function'){
+        console.log('type error');
+        return error
+    }
+
+    newObj = Object.create(constructor.prototype)
+    result = constructor.apply(newObj,arguments)
+
+    let flag = result && (typeof result === 'function' || typeof result === 'object')
+
+    return flag ? result : newObj
+}
+
 
 
 function createA(age){
     this.age = age
     this.name = '余涛'
 }
-let A = objectNew(createA,18)
+let A = testNew(createA,18)
 console.log(A);
