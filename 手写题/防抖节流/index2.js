@@ -11,8 +11,15 @@ function jieliu(fun,time){
         let t2 = new Date()
         let args = arguments
         if(t2 - t1 > time){
-            fun.apply(this,args)
+            console.log(22);
             t1 = t2
+            return fun.apply(this,args)
         }
     }
 }
+
+function a(){
+    console.log(111);
+}
+
+jieliu(a,1)()
