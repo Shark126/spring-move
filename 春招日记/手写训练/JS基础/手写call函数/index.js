@@ -26,3 +26,27 @@ Function.prototype.myCall = function(context){
     delete context.fn
     return result
 }
+
+Function.prototype.callcall = function(context){
+    if(typeof this !== 'function'){
+        console.error('type error')
+    }
+    context = context || window
+    let args = [...arguments].slice(1)
+    let result = null
+    context.fn = this
+    result = context.fn(...args)
+
+    delete context.fn
+    return result
+    
+}
+
+let manA = {
+    name: '李华',
+}
+
+function test(age){
+    console.log(this.name,age);
+}
+test.callcall(manA,18)
